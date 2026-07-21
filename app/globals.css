@@ -2,3 +2,27 @@
 @media(max-width:1000px){.metrics{grid-template-columns:1fr 1fr}.dashboard-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}}@media(max-width:700px){aside{transform:translateX(-100%);transition:.2s}aside.open{transform:none}.brand>button,.mobile-menu{display:block}main{margin-left:0;padding:0 16px 30px}.top{height:84px}.top h1{font-size:20px}.top p{display:none}.demo{display:none}.primary{padding:9px 11px}.metrics,.cards{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.wide{grid-column:auto}.chart{height:220px}}
 .calendar-panel{padding:0;overflow:hidden}.calendar-head{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--border)}.calendar-head h2{font-size:18px;margin:0}.calendar-head button{display:grid;place-items:center;background:none;border:0;color:var(--muted);cursor:pointer}.calendar-head button:hover{color:var(--green)}.weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr)}.weekdays b{padding:14px 10px;text-align:center;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border)}.calendar-grid article{position:relative;min-height:120px;padding:12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);color:#aab4c6}.calendar-grid article:nth-child(7n){border-right:0}.calendar-grid .outside{opacity:.28}.calendar-grid article>span{display:block;text-align:right;font-size:12px}.calendar-grid article>div{display:grid;gap:5px;margin-top:25px}.calendar-grid small{color:var(--muted)}.calendar-grid strong{font-size:15px}.calendar-grid .profit{background:#123328;border-left:3px solid var(--green)}.calendar-grid .profit strong{color:var(--green)}.calendar-grid .loss{background:#351d25;border-left:3px solid var(--red)}.calendar-grid .loss strong{color:var(--red)}
 @media(max-width:1000px){.calendar-grid article{min-height:100px;padding:8px}.calendar-grid article>div{margin-top:16px}.calendar-grid strong{font-size:12px}}@media(max-width:700px){.calendar-panel{overflow-x:auto}.weekdays,.calendar-grid{min-width:700px}.calendar-head{position:sticky;left:0;min-width:calc(100vw - 32px)}}
+.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.settings-card{display:grid;gap:20px}
+.settings-card:last-child{grid-column:1/-1}
+.settings-title{display:flex;align-items:center;gap:13px}
+.settings-title h2{font-size:16px;margin:0 0 3px}
+.settings-title p{margin:0;color:var(--muted);font-size:12px}
+.settings-icon{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:#193b33;color:var(--green)}
+.settings-icon svg{width:20px}
+.settings-icon.sync{background:#172e55;color:#6c9eff}
+.settings-icon.danger{background:#41212a;color:var(--red)}
+.settings-card label{display:grid;gap:7px;color:var(--muted);font-size:12px}
+.settings-card input{width:100%;background:#0b121f;border:1px solid #29354a;border-radius:8px;color:#e8eef8;padding:11px 12px}
+.settings-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sync-row{display:flex;justify-content:space-between;gap:20px;padding:14px;border:1px solid var(--border);border-radius:10px;background:#0d1523}
+.sync-row>div{display:grid;gap:5px}
+.sync-row>div:last-child{text-align:right}
+.sync-row small{display:block;color:var(--muted);font-size:11px}
+.online,.waiting{font-size:11px;font-weight:700;padding:4px 8px;border-radius:99px;justify-self:end}
+.online{color:var(--green);background:#123c2d}
+.waiting{color:#f0c767;background:#433617}
+.settings-note{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.signout{justify-self:start;display:flex;align-items:center;gap:8px;background:#351d25;color:var(--red);border:1px solid #63303d;border-radius:9px;padding:10px 14px;font-weight:700;cursor:pointer}
+.signout svg{width:17px}
+@media(max-width:800px){.settings-grid{grid-template-columns:1fr}.settings-card:last-child{grid-column:auto}.settings-pair{grid-template-columns:1fr}.sync-row{display:grid}.sync-row>div:last-child{text-align:left}.online,.waiting{justify-self:start}}
