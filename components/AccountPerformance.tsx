@@ -4,7 +4,7 @@ import { ArrowLeft, Pencil, Target, TrendingDown, TrendingUp } from "lucide-reac
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Account, Trade } from "@/lib/types";
 
-const money = (value: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(value);
+const money = (value: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
 
 export function AccountPerformance({ account, trades, onBack, onEdit }: { account: Account; trades: Trade[]; onBack: () => void; onEdit: () => void }) {
   const accountTrades = trades.filter(trade => trade.accountId === account.id).sort((a, b) => a.closedAt.localeCompare(b.closedAt));
