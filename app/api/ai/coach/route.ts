@@ -13,8 +13,8 @@ function fallbackCoach(question: string, trades: any[], account: any) {
   const avgLoss = losses.length ? grossLoss / losses.length : 0;
   const setups = new Map<string,{count:number,pnl:number,wins:number}>();
   for (const t of closed) { const k=String(t.setup||"Untagged"); const x=setups.get(k)||{count:0,pnl:0,wins:0}; x.count++; x.pnl+=Number(t.pnl||0); if(Number(t.pnl)>0)x.wins++; setups.set(k,x); }
-  const ranked=[...setups.entries()].sort((a,b)=>a[1].pnl-b[1].pnl);
-  const worst=ranked[0], best=ranked.at(-1);
+  const ranked=Array.from(setups.entries()).sort((a,b)=>a[1].pnl-b[1].pnl);
+  const worst=ranked[0], best=ranked.length ? ranked[ranked.length-1] : undefined;
   const largestLoss=losses.length?Math.min(...losses.map(t=>Number(t.pnl))):0;
   const riskLine = account?.balance && largestLoss ? `Your largest recorded loss is $${Math.abs(largestLoss).toFixed(2)}, about ${(Math.abs(largestLoss)/Number(account.balance)*100).toFixed(2)}% of the selected account balance.` : `Your largest recorded loss is $${Math.abs(largestLoss).toFixed(2)}.`;
   const parts = [
